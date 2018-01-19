@@ -49,7 +49,7 @@ opscenter_instace_type: la taille de la machine opscenter (minimum medium)
 ######
 
 
-## II - Lancement du cas d'utilisation : ##
+### II - Lancement du cas d'utilisation : ###
 
 - **Copier** les fichiers : hosts et les deux clés générées ( cluster_interconnection, deployer ) qui sont dans le dossier "DEPLOIMENT D'INFRASTRUCTURE ET LES SERVICES/terraform", et les mettre dans le dossier "AUTOMATISATION USE CASE"
 
