@@ -63,7 +63,7 @@ opscenter_instace_type: la taille de la machine opscenter (minimum medium)
 
 - Inclure dans le dossier "AUTOMATISATION USE CASE" le Job du Consumer: 
 
-*Vous avez deux choix pour l'avoir : 
+*Vous avez deux choix pour l'avoir :* 
 
 - A travers le lien suivant :
 http://www.mediafire.com/file/dd2dfyfkx9iyo9q/RDD_Crypto.jar
