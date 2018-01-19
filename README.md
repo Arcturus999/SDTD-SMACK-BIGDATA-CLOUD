@@ -1,38 +1,41 @@
 # Systemes-Distribues-pour-le-Traitement-de-Donnees-sur-le-cloud
 
------------------------------- GUIDE D'INSTALLATION ET D'UTILISATION 
+ ##### Guide d'installation et d'utilisation #####
 
-Copier le projet sur votre rmachine : 
+- Clonner le projet sur votre machine : 
+```
 #git clone https://github.com/Ghanouch/Systemes-Distribues-pour-le-Traitement-de-Donnees-sur-le-cloud.git
+```
 
+I - LANCEMENT DU DEPLOIEMENT : 
 
-I - LANCER LE DEPLOIEMENT
-
-ENTRER SUR LE CHEMIN SUIVANT  : 
+- Executer la commande suivante  : 
+```
 #cd DEPLOIMENT\ D\'INFRASTRUCTURE\ ET\ LES\ SERVICES/terraform
-
+```
 #####
-Prérequis: Installer terraform: https://www.terraform.io/intro/getting-started/install.html
+Installer préalablement terraform: https://www.terraform.io/intro/getting-started/install.html
 #####
-Guide d'utilisation du script:
+##### Guide d'utilisation du script:
 
-	1-Génerer 2 clé RSA une pour le bastion et l'autre pour le reste de la stack grâce à: "ssh-keygen"
-	  +Vous devez choisir les noms "deployer" et "cluster_interconnection" respectivement pour la clé du bastion 
-	   et la clé de la stack
-	  +Elles doivent être mises dans le dossier "terraform"
-		#ssh-keygen
-
-	2-Ouvrir le fichier "secret.tfvars" dans le dossier "terraform" et remplir les champs suivants:
-	  + access_key et secret_key : respectivement la clé d'accès et la clé secrète de votre utilisateur AWS  
-	  + region: la région où le cluster va être déployé, exemple: "us-east-1"
-	  + ami: ami de la machine ubuntu 16.04 d'AWS, on la retrouve lorsqu'on essaie de créer manuellement une machine
-	  + cassandra_ami: même que "ami" mais celle de ubuntu 14.04
-	  + deployer_public_key: le contenu de la clé publique du bastion
-	  + cluster_public_key: le contenu de la clé publique de la stack
-	  + cassandra_instance_type: la taille des machines cassandra (minimum medium)
-	  + opscenter_instace_type: la taille de la machine opscenter (minimum medium)
-
-	3-Lancer le script wrap-up.sh en sudo si possible (parfois il faut des droits d'administrateur)
+Génerer 2 clé RSA une pour le bastion et l'autre pour le reste de la stack grâce à:
+```
+#ssh-keygen
+```
+- Vous devez choisir alors les noms à attribuer aux clés. Ex : "deployer" et "cluster_interconnection" respectivement pour la clé du bastion et la clé de la stack. Elles doivent être mises dans le dossier "terraform"
+		
+-Ouvrir le fichier "secret.tfvars" dans le dossier "terraform" et remplir les champs suivants:
+```
+**access_key et secret_key** : respectivement la clé d'accès et la clé secrète de votre utilisateur AWS  
+region: la région où le cluster va être déployé, exemple: "us-east-1"
+ami: ami de la machine ubuntu 16.04 d'AWS, on la retrouve lorsqu'on essaie de créer manuellement une machine
+cassandra_ami: même que "ami" mais celle de ubuntu 14.04
+deployer_public_key: le contenu de la clé publique du bastion
+cluster_public_key: le contenu de la clé publique de la stack
+cassandra_instance_type: la taille des machines cassandra (minimum medium)
+opscenter_instace_type: la taille de la machine opscenter (minimum medium)
+```
+-En fin,lancer le script wrap-up.sh en sudo si possible (parfois il faut des droits d'administrateur)
         
 	
 Si vous voulez détruire la stack, ouvrez un termial dans le dossier "terraform" et utilisez la commande suivante:
